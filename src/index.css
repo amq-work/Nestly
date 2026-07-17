@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-primary: #6B9080;
+  --color-primary-container: #CCE3DE;
+  --color-on-primary-container: #1C2B24;
+  --color-secondary: #A4C3B2;
+  --color-secondary-container: #EAF4F4;
+  --color-tertiary: #F4A261;
+  --color-tertiary-container: #CCE3DE;
+  --color-background: #EAF4F4;
+  --color-surface: #CCE3DE;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #F6FFF8;
+  --color-surface-container: #EAF4F4;
+  --color-surface-container-highest: #A4C3B2;
+  --color-on-surface: #1C2B24;
+  --color-on-surface-variant: #6B9080;
+  --color-mint-cream: #F6FFF8;
+  --color-frozen-water: #CCE3DE;
+  --color-azure-mist: #EAF4F4;
+  --color-jungle-teal: #6B9080;
+  --color-muted-teal: #A4C3B2;
+  --color-ink: #1C2B24;
+  --color-warm-tangerine: #F4A261;
+  --color-emergency-red: #D62828;
+  --color-success-green: #6B9080;
+}
+
+@layer utilities {
+  .ambient-shadow {
+    box-shadow: 0 4px 20px rgba(26, 26, 26, 0.05);
+  }
+}

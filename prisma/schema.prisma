@@ -1,0 +1,86 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Customer {
+  id            String    @id @default(uuid())
+  fullName      String
+  email         String    @unique
+  phone         String
+  address       String?   @default("")
+  zipCode       String?   @default("")
+  passwordHash  String
+  profileImage  String?
+  createdAt     DateTime  @default(now())
+  lastLogin     DateTime?
+  status        String    @default("Active")
+  emailVerified Boolean   @default(false)
+  bookings      Booking[]
+}
+
+model Labour {
+  id              String          @id @default(uuid())
+  fullName        String
+  email           String          @unique
+  phone           String
+  passwordHash    String
+  bio             String          @default("")
+  specialties     String          @default("")
+  badge           String          @default("Nestly Verified")
+  languages       String          @default("English")
+  experienceYears Int             @default(0)
+  completedJobs   Int             @default(0)
+  rating          Float           @default(0.0)
+  reviewsCount    Int             @default(0)
+  avatarColor     String          @default("bg-[#6B9080] text-white")
+  avatarText      String          @default("")
+  status          String          @default("Active")
+  createdAt       DateTime        @default(now())
+  lastLogin       DateTime?
+  services        LabourService[]
+  bookings        Booking[]
+}
+
+model LabourService {
+  id          String   @id @default(uuid())
+  labourId    String
+  labour      Labour   @relation(fields: [labourId], references: [id])
+  title       String
+  description String
+  category    String
+  price       String
+  priceValue  Float
+  iconName    String   @default("Wrench")
+  badge       String   @default("Standard")
+  isActive    Boolean  @default(true)
+  isEmergency Boolean  @default(false)
+  createdAt   DateTime @default(now())
+}
+
+model Booking {
+  id           String    @id @default(uuid())
+  customerId   String
+  customer     Customer  @relation(fields: [customerId], references: [id])
+  labourId     String?
+  labour       Labour?   @relation(fields: [labourId], references: [id])
+  serviceType  String
+  price        String?
+  priceValue   Float?
+  date         String
+  time         String
+  address      String
+  notes             String?
+  status            String    @default("Request")
+  assignedProName   String?
+  assignedProAvatar String?
+  assignedProRating Float?
+  assignedProPhone  String?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+}

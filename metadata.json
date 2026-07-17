@@ -1,0 +1,6 @@
+{
+  "name": "Nestly",
+  "description": "Book trusted, vetted home services including deep cleaning, plumbing, and electrical repair with real-time status tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
