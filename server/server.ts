@@ -16,8 +16,11 @@ app.use('/api/data', dataRoutes);
 app.use('/api/bookings', bookingRoutes);
 app.use('/api/labour', labourRoutes);
 
-const PORT = process.env.PORT || 5000;
+if (process.env.NODE_ENV !== 'production') {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`Nestly Server running on port ${PORT}`);
+  });
+}
 
-app.listen(PORT, () => {
-  console.log(`Nestly Server running on port ${PORT}`);
-});
+export default app;
