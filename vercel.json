@@ -10,6 +10,14 @@
       "destination": "/api/index.ts"
     },
     {
+      "source": "/labour",
+      "destination": "/labour.html"
+    },
+    {
+      "source": "/labour/(.*)",
+      "destination": "/labour.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
