@@ -80,6 +80,13 @@ export default function Footer({ onNavClick }: FooterProps) {
         >
           Privacy Policy
         </a>
+        <a
+          href="/Nestly Project Case Study.pdf"
+          download
+          className="font-sans text-xs uppercase tracking-wider text-on-surface-variant hover:text-primary transition-all"
+        >
+          Project Case Study
+        </a>
         <div className="flex gap-4 mt-2 text-[10px] uppercase tracking-widest font-sans font-bold text-on-surface-variant">
           <span className="hover:text-primary cursor-pointer">Instagram</span>
           <span className="hover:text-primary cursor-pointer">Twitter</span>
