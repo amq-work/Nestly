@@ -50,7 +50,6 @@ export default function Header({
             className="flex flex-col items-start text-left cursor-pointer hover:opacity-90 transition-opacity"
             id="logo-btn"
           >
-            <span className="text-[9px] uppercase tracking-[0.25em] font-sans font-bold opacity-60 leading-none mb-1">Vol. 04 // Iss. 12</span>
             <span className="text-3xl font-serif font-black tracking-tighter text-primary">Nestly</span>
           </button>
 
@@ -131,7 +130,6 @@ export default function Header({
       {/* Mobile Header */}
       <div className="md:hidden flex justify-between items-center px-4 py-4">
         <button onClick={() => setCurrentTab('services')} className="flex flex-col items-start text-left cursor-pointer">
-          <span className="text-[8px] uppercase tracking-[0.2em] font-sans font-bold opacity-60">Vol. 04</span>
           <span className="text-2xl font-serif font-black tracking-tighter text-primary">Nestly</span>
         </button>
         <div className="flex items-center gap-3">

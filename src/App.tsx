@@ -414,10 +414,139 @@ export default function App() {
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#FAF9F6]/10 to-[#FAF9F6]"></div>
                 </div>
 
+                {/* Abstract Geometric Shapes & Lines Collection */}
+                <div className="absolute inset-0 z-[5] overflow-hidden pointer-events-none">
+                  {/* Base Glow */}
+                  <motion.div
+                    animate={{ y: [0, -30, 0], x: [0, 20, 0] }}
+                    transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -top-10 -left-20 md:-left-10 w-96 h-96 rounded-full bg-primary/5 blur-[100px]"
+                  />
+                  
+                  {/* Large Diagonal Intersecting Lines */}
+                  <motion.div
+                    animate={{ opacity: [0.1, 0.2, 0.1] }}
+                    transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute inset-0"
+                  >
+                    <svg className="w-full h-full text-primary" xmlns="http://www.w3.org/2000/svg">
+                      <line x1="-10%" y1="20%" x2="110%" y2="80%" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 8" opacity="0.4" />
+                      <line x1="-10%" y1="80%" x2="110%" y2="10%" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2 6" opacity="0.3" />
+                      <line x1="10%" y1="-10%" x2="90%" y2="110%" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
+                      <line x1="80%" y1="-10%" x2="30%" y2="110%" stroke="currentColor" strokeWidth="0.5" opacity="0.2" />
+                    </svg>
+                  </motion.div>
+
+                  {/* Large Wavy Border Lines (Top & Bottom) */}
+                  <div className="absolute top-0 left-0 w-full overflow-hidden opacity-20">
+                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-24 text-primary">
+                      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                    </svg>
+                  </div>
+                  <div className="absolute bottom-0 left-0 w-full overflow-hidden opacity-20 rotate-180">
+                    <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-24 text-primary">
+                      <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                    </svg>
+                  </div>
+
+                  {/* Grouped Wavy Curves (Right side) */}
+                  <motion.div
+                    animate={{ rotate: [0, 5, 0] }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -top-10 -right-20 md:-right-10 w-96 h-96 opacity-20"
+                  >
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-primary">
+                      <path fill="none" stroke="currentColor" strokeWidth="0.5" d="M 0,100 C 50,150 150,50 200,100" />
+                      <path fill="none" stroke="currentColor" strokeWidth="0.5" d="M 0,120 C 50,170 150,70 200,120" />
+                      <path fill="none" stroke="currentColor" strokeWidth="0.5" d="M 0,140 C 50,190 150,90 200,140" />
+                      <path fill="none" stroke="currentColor" strokeWidth="0.5" d="M 0,160 C 50,210 150,110 200,160" />
+                      <path fill="none" stroke="currentColor" strokeWidth="0.5" d="M 0,180 C 50,230 150,130 200,180" />
+                    </svg>
+                  </motion.div>
+
+                  {/* Dotted Grids (Corners) */}
+                  <div className="absolute top-20 left-10 opacity-30">
+                    <svg width="60" height="60" className="text-primary">
+                      <pattern id="dot-grid-1" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+                        <circle cx="2" cy="2" r="1.5" fill="currentColor" />
+                      </pattern>
+                      <rect x="0" y="0" width="100%" height="100%" fill="url(#dot-grid-1)" />
+                    </svg>
+                  </div>
+                  <div className="absolute bottom-20 right-10 opacity-20">
+                    <svg width="80" height="80" className="text-primary">
+                      <pattern id="dot-grid-2" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+                        <circle cx="2" cy="2" r="2" fill="currentColor" />
+                      </pattern>
+                      <rect x="0" y="0" width="100%" height="100%" fill="url(#dot-grid-2)" />
+                    </svg>
+                  </div>
+
+                  {/* Floating Concentric Rings (Center Left) */}
+                  <motion.div
+                    animate={{ scale: [1, 1.05, 1], rotate: [0, -45, 0] }}
+                    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute top-1/3 -left-16 md:left-5 w-40 h-40 flex items-center justify-center opacity-30"
+                  >
+                    <div className="absolute w-full h-full border border-primary/40 rounded-full" />
+                    <div className="absolute w-3/4 h-3/4 border border-primary/30 rounded-full" />
+                    <div className="absolute w-1/2 h-1/2 border border-primary/20 rounded-full border-dashed" />
+                  </motion.div>
+
+                  {/* Floating Triangle (Bottom Left) */}
+                  <motion.div
+                    animate={{ y: [0, -15, 0], rotate: [0, 25, 0] }}
+                    transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute bottom-1/4 left-20 w-16 h-16 opacity-30"
+                  >
+                    <svg viewBox="0 0 100 100" className="w-full h-full text-primary">
+                      <polygon points="50,15 90,85 10,85" fill="none" stroke="currentColor" strokeWidth="2" />
+                    </svg>
+                  </motion.div>
+
+                  {/* Offset Angled Rectangles (Bottom Right) */}
+                  <motion.div
+                    animate={{ y: [0, 20, 0], rotate: [15, 5, 15] }}
+                    transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -bottom-10 right-20 w-48 h-48 opacity-25 flex"
+                  >
+                    <div className="absolute inset-0 border-2 border-primary/30 rounded-lg rotate-6" />
+                    <div className="absolute inset-4 border border-primary/20 rounded-lg -rotate-3" />
+                  </motion.div>
+
+                  {/* Crosshairs & Plus Signs */}
+                  <div className="absolute top-1/4 left-1/3 w-4 h-4 opacity-40">
+                    <div className="absolute top-1/2 -left-2 w-8 h-px bg-primary" />
+                    <div className="absolute left-1/2 -top-2 w-px h-8 bg-primary" />
+                  </div>
+                  <div className="absolute bottom-1/3 right-1/4 w-4 h-4 opacity-30">
+                    <div className="absolute top-1/2 -left-3 w-10 h-px bg-primary" />
+                    <div className="absolute left-1/2 -top-3 w-px h-10 bg-primary" />
+                  </div>
+
+                  {/* Scattered Floating Dots */}
+                  <div className="absolute inset-0 pointer-events-none opacity-40">
+                    {[
+                      { t: '15%', l: '85%' },
+                      { t: '75%', l: '15%' },
+                      { t: '60%', l: '90%' },
+                      { t: '85%', l: '60%' },
+                      { t: '10%', l: '40%' },
+                      { t: '40%', l: '8%' },
+                    ].map((pos, i) => (
+                      <motion.div
+                        key={i}
+                        animate={{ y: [0, -10, 0], opacity: [0.2, 0.8, 0.2] }}
+                        transition={{ duration: 4 + i, repeat: Infinity, delay: i * 0.5 }}
+                        className="absolute w-2 h-2 rounded-full bg-primary"
+                        style={{ top: pos.t, left: pos.l }}
+                      />
+                    ))}
+                  </div>
+                </div>
+
                 <div className="relative z-10 max-w-[1200px] mx-auto text-center">
-                  <span className="bg-[#1A1A1A] text-[#FAF9F6] px-3 py-1 text-[9px] uppercase tracking-[0.2em] font-sans font-bold inline-block mb-4">
-                    ESTABLISHED MMXXVI — TOKYO & LONDON
-                  </span>
+
                   <h1 className="font-serif text-5xl md:text-7xl font-black text-ink mb-6 tracking-tighter max-w-3xl mx-auto leading-[0.95]">
                     Book trusted help, <br/><span className="italic font-light">today.</span>
                   </h1>
